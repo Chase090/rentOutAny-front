@@ -1,0 +1,1 @@
+list = document.querySelector('#Listings')
