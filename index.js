@@ -1,1 +1,2 @@
-list = document.querySelector('#Listings')
+const list = document.querySelector('#Listings')
+

@@ -12,9 +12,6 @@ class Listing {
         this.rent_price = listing.rent_price
         this.category_id = listing.category_id
 
-        this.element = document.createElement('li')
-        this.element.id = `list-${listing.id}`
-        this.element.dataset.id = listing.id
 
 
         Listing.all.push(this)
