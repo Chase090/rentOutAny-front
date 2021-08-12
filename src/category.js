@@ -1,17 +1,25 @@
 class Category {
 
     static all = []
+    static catContainer = document.querySelector('#categories-container')
 
     constructor(categories) {
         this.id = categories.id
         this.name = categories.name
 
         this.active = false
-        this.element = document.createElement('button')
-        
+        this.option = document.createElement('option')
         Category.all.push(this)
     };
+
+
     addToDom() {
-        debugger
+        Category.catContainer.append(this.render())
+    }
+
+    render() {
+        this.option.innerText = this.name
+        this.option.id = `category-${this.id}`
+        return this.option
     }
 };
