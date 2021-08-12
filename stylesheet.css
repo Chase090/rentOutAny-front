@@ -1,3 +1,6 @@
+
+
+
 body {
     background-color: lightblue;
   }
@@ -6,3 +9,26 @@ body {
     display: none;
 }
 
+#rented {
+    position: absolute;	
+    top: 10px;
+    right: 80px;
+    width: 100px;
+}
+#create-list-form-button {
+    position: absolute;	
+    top: 30px;
+    right: 80px;
+    width: 100px;
+}
+
+#navigation {
+    position: static;	
+    top: 10px;
+    left: 0px;
+    width: 100px;
+}
+
+#form-container {
+   border: 1px solid blue;
+}

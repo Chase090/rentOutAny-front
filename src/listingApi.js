@@ -18,26 +18,42 @@ class ListingApi {
     };
 
     static createListing() {
-        debugger
+        
 
         const formData = {
-            name: ,
-            price:,
-            description:,
-            category_id:
+            name: nameInpt.value,
+            rent_price: priceInpt.value,
+            description: descInpt.value,
+            category_id: catDrpDn.value
         }
 
+        const configObj = {
+            method: 'POST', 
+            headers: { 
+                "Content-Type": "application/json", 
+                Accept: "application/json"
+            },
+            body: JSON.stringify(formData) 
+        };
 
-
-
+        fetch(this.baseUrl, configObj)  
+        .then(r => r.json())
+        .then(data => {
+            debugger
+            const list = data.data
+            const i = new Listing({id: list.id, ...list.attributes} )
+    
+            i.renderList()
+            
+        })
     };
 
    
 
      
+};
 
 
-}
 
 
 ListingApi.getListings()

@@ -30,9 +30,12 @@ class Listing {
         H4.innerText = this.description
 
         let p = document.createElement('p')
-        p.innerText = `$${this.rent_price}`
+        p.innerText = `$${this.price}/Day`
+
+        let rentBtn = document.createElement('button')
+        rentBtn.innerText = "Rent Out"
         
-        listCard.append(H3, H4, p)
+        listCard.append(H3, H4, p, rentBtn)
         list.appendChild(listCard)
         
     };
