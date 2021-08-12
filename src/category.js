@@ -15,11 +15,13 @@ class Category {
 
     addToDom() {
         Category.catContainer.append(this.render())
-    }
+    };
 
     render() {
         this.option.innerText = this.name
         this.option.id = `category-${this.id}`
         return this.option
-    }
+    };
+
+    
 };

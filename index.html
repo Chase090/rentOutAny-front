@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RentOutAny</title>
@@ -10,19 +11,19 @@
     <nav>
         <div class='header'>
             <input class='search'/>
+        </div>  
+            
+            <h2>Filter by Category:</h2>
+            <select id ="categories-container"></select> 
+
+        <div id='form-container' class='create-listing'>  
+            <button id='create-list-form-button' class=''>Create List</button>
         </div>
     </nav>
-    <h2>Filter by Category:</h2>
-   
-    <select id ="categories-container" >
- 
-    </select> 
-    
-    <div id="Listings"> 
-
+  
+    <div id="Listings" class="hidden"> 
+        <ul id="items-list"></ul>
     </div>
-
-
 
 
 

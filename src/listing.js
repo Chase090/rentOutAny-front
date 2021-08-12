@@ -19,8 +19,8 @@ class Listing {
     };
 
     renderList() {
-        let lsitCard = document.createElement('div')
-        lsitCard.className = 'list-div'
+        let listCard = document.createElement('li')
+        listCard.className = 'list-li'
 
         let H3 = document.createElement('h3')
         H3.innerText = this.name
@@ -32,9 +32,13 @@ class Listing {
         let p = document.createElement('p')
         p.innerText = `$${this.rent_price}`
         
-        lsitCard.append(H3, H4, p)
-        list.appendChild(lsitCard)
+        listCard.append(H3, H4, p)
+        list.appendChild(listCard)
         
     };
+
+   
+
+
 
 };

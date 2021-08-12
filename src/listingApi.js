@@ -2,6 +2,7 @@ class ListingApi {
 
     static baseUrl = "http://localhost:3000/listings"
     static list = document.querySelector('#Listings')
+    // static createForm = document.querySelector('create-list-form')
 
     static getListings() {
         fetch(this.baseUrl)
@@ -15,6 +16,16 @@ class ListingApi {
             
         });            
     };
+
+    static createListingAction() {
+   
+    };
+
+   
+
+     
+
+
 }
 
 
