@@ -22,22 +22,31 @@
     <form id="form-container" class="hidden">
         
         <div class="form-group">
+            <label for="input-name">Name</label>
+            <input id="input-name" 
+            class="form-control"
+            type="text" 
+            placeholder="so, whats the name...">
+        </div>
+        
+        <div class="form-group">
             <label for="rent-price">Rent Price</label>
-            <input type="Rent-price" id="input-Rent-price" class="form-control"
+            <input id="rent-price" 
+            class="form-control"
+            type="number" 
             placeholder="list price...">
         </div>
         
         <div class="form-group">
-            <label for="list-descritption">Description</label>
-            <textarea
+            <label for="list-desc">Description</label>
+            <textarea id="list-desc" 
             class="form-control" 
-            id="list-descritption" 
             rows="3"
             placeholder="type your description"></textarea>   
         </div>
         
         <p>Choose a category:</p>
-        <select id ="categories" name="categories">
+        <select id ="categories-selection" name="categories">
             
         </select> 
         <br><br> 
@@ -48,7 +57,7 @@
     </form>
         
 
-<div id="listings" class="hidden"> 
+<div id="listings"> 
         <ul id="items-list"></ul>
     </div>
 

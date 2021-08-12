@@ -23,5 +23,10 @@ class Category {
         return this.option
     };
 
-    
+    addToDrpDn(){
+        const option = document.createElement('option')
+        option.value  = this.id 
+        option.innerText = this.name
+        catDrpDn.append(option)
+    }
 };

@@ -17,8 +17,19 @@ class ListingApi {
         });            
     };
 
-    static createListingAction() {
-   
+    static createListing() {
+        debugger
+
+        const formData = {
+            name: ,
+            price:,
+            description:,
+            category_id:
+        }
+
+
+
+
     };
 
    

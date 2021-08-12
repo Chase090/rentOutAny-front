@@ -11,6 +11,8 @@ class CategoryApi {
 
                 const o = new Category({id: element.id, ...element.attributes})
                 o.addToDom()
+                o.addToDrpDn()
+                
             })
         })
     }
