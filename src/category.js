@@ -4,6 +4,7 @@ class Category {
     static catContainer = document.querySelector('#categories-container')
 
     constructor(categories) {
+    
         this.id = categories.id
         this.name = categories.name
 

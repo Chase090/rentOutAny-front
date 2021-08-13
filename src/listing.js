@@ -12,15 +12,21 @@ class Listing {
         this.price = listing.rent_price
         this.category_id = listing.category_id
 
+        this.rentBtn = document.createElement('button')
+        this.rentBtn.innerText = "Rent Out"
 
+        
 
         Listing.all.push(this)
     
     };
 
+
     renderList() {
+
         let listCard = document.createElement('li')
         listCard.className = 'list-li'
+        clearElement(listCard)
 
         let H3 = document.createElement('h3')
         H3.innerText = this.name
@@ -32,16 +38,26 @@ class Listing {
         let p = document.createElement('p')
         p.innerText = `$${this.price}/Day`
 
-        let rentBtn = document.createElement('button')
-        rentBtn.innerText = "Rent Out"
         
-        listCard.append(H3, H4, p, rentBtn)
-        list.appendChild(listCard)
         
+        listCard.append(H3, H4, p, this.rentBtn)
+        list.appendChild(listCard) 
+        
+        if (this.rentBtn.addEventListener('click', this.addToCart)) {
+            clearElement(listCard)
+        }
+        
+        
+        
+    
     };
+    
+    addToCart = (e) => {       
+        const btn = e.target
+            btn.innerText = "Remove"
+        const ul = e.target.parentNode
+        cartLi.appendChild(ul, btn)
 
-   
-
-
-
+        
+    }
 };

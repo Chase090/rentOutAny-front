@@ -18,9 +18,19 @@ const priceInpt = document.querySelector('#rent-price')
 const descInpt = document.querySelector('#list-desc')
 const submitInpt = document.querySelector('#create-button')
 const catDrpDn = document.querySelector('#categories-selection')
-const rented = document.querySelector('#rented')
+
+// cart
+const cartButton = document.querySelector('#cart-rent')
+const cartDiv = document.querySelector('#rented')
+const cartLi = document.querySelector('#rented-list')
+const back = document.querySelector('#back')
 
 // events
+
+
+cartButton.addEventListener('click', function(){addHidden(list), addHidden(cartButton), removeHidden(cartDiv)})
+
+back.addEventListener('click', function(){removeHidden(list), removeHidden(cartButton), addHidden(cartDiv)})
 
 createListButton.addEventListener('click', function(){removeHidden(formContainer),addHidden(list), addHidden(createListButton)} )
 
@@ -28,7 +38,7 @@ cancel.addEventListener('click', function(){addHidden(formContainer), removeHidd
 
 submitInpt.addEventListener('click', handleFormSubmit)
 
-rented.addEventListener('click', addHidden(list), removeHidden())
+
 
 function handleFormSubmit(e) {
     e.preventDefault()
