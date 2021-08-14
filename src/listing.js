@@ -55,9 +55,17 @@ class Listing {
     addToCart = (e) => {       
         const btn = e.target
             btn.innerText = "Remove"
-        const ul = e.target.parentNode
-        cartLi.appendChild(ul, btn)
+            const ul = e.target.parentNode
+            
+            cartLi.appendChild(ul, btn)
+            btn.addEventListener('click', this.deleteListing)
+    };
 
-        
-    }
+    
+    deleteListing =(e) => {
+        debugger
+        this.rentBtn.remove()
+        ListingApi.deleteAction(this.id)
+    };
+
 };
