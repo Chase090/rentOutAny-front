@@ -48,7 +48,20 @@ class ListingApi {
         })
     };
 
-    
+    static deleteAction(id) {
+        const configObj = {
+            method: 'DELETE',
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json"
+            }
+        }
+
+        fetch(`${this.baseUrl}/${id}`, configObj)
+            .then(response => response.json())
+            .then(json => {debugger})
+        
+    };
 
 
    

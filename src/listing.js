@@ -63,8 +63,8 @@ class Listing {
 
     
     deleteListing =(e) => {
-        debugger
         this.rentBtn.remove()
+      
         ListingApi.deleteAction(this.id)
     };
 
