@@ -13,26 +13,44 @@ class Category {
         Category.all.push(this)
     };
 
-
-    
+      
+  
     render() {
         this.option.innerText = this.name
+        this.option.value = this.id
         this.option.id = `category-${this.id}`
         return this.option
     };
 
-    addToDom() {
-        Category.catContainer.append(this.render())
-        this.addListener()
-    };
     
-    addListener() {
-        this.option.addEventListener('click', this.setActiveCategory)
+    addToDom() {
+        let catCont = Category.catContainer
+        catCont.append(this.render())
+        catCont.addEventListener('change', this.setActiveCategory)
+       
+       
     };
+
     
     setActiveCategory = (e) => {
-    
+        
+        let activatedCat
+        Category.all.forEach(c => {
+            if (c.id === e.target.value) {
+                c.active = true
+                c.option.classList.add('activated')
+                activatedCat = c
+            } else {
+                c.active = false
+                c.option.classList.remove('activated')
+            }
+            debugger
+            
+       })
+
     };
+  
+
 
     addToDrpDn(){
         const option = document.createElement('option')
