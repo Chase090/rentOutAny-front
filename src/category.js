@@ -14,14 +14,24 @@ class Category {
     };
 
 
-    addToDom() {
-        Category.catContainer.append(this.render())
-    };
-
+    
     render() {
         this.option.innerText = this.name
         this.option.id = `category-${this.id}`
         return this.option
+    };
+
+    addToDom() {
+        Category.catContainer.append(this.render())
+        this.addListener()
+    };
+    
+    addListener() {
+        this.option.addEventListener('click', this.setActiveCategory)
+    };
+    
+    setActiveCategory = (e) => {
+    
     };
 
     addToDrpDn(){

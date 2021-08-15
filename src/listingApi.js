@@ -59,8 +59,8 @@ class ListingApi {
 
         fetch(`${this.baseUrl}/${id}`, configObj)
             .then(response => response.json())
-            .then(json => {debugger})
-        
+            .then(json => alert(json.message))
+
     };
 
 
