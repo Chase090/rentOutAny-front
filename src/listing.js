@@ -12,6 +12,10 @@ class Listing {
         this.price = listing.rent_price
         this.category_id = listing.category_id
 
+        this.listCard = document.createElement('li')
+        this.listCard.className = 'list-li'
+        
+
         this.rentBtn = document.createElement('button')
         this.rentBtn.innerText = "Rent Out"
 
@@ -22,11 +26,11 @@ class Listing {
     };
 
 
-    renderList() {
+    renderList(a) {
 
         let listCard = document.createElement('li')
         listCard.className = 'list-li'
-        clearElement(listCard)
+    
 
         let H3 = document.createElement('h3')
         H3.innerText = this.name
@@ -40,12 +44,12 @@ class Listing {
 
         
         
-        listCard.append(H3, H4, p, this.rentBtn)
-        list.appendChild(listCard) 
+        this.listCard.append(H3, H4, p, this.rentBtn)
+        list.appendChild(this.listCard) 
         
-        if (this.rentBtn.addEventListener('click', this.addToCart)) {
-            clearElement(listCard)
-        }
+        this.rentBtn.addEventListener('click', this.addToCart)
+            
+        
         
         
         
@@ -63,9 +67,38 @@ class Listing {
 
     
     deleteListing =(e) => {
+        this.listCard.remove()
         this.rentBtn.remove()
-      
         ListingApi.deleteAction(this.id)
     };
 
+    static filterByCategory(filteredCat) {
+
+        if (filteredCat) {
+            for (const list of Listing.all) {
+                if (list.category_id === parseInt(filteredCat.id)) {
+                    list.listCard.style.display = ""
+                } else {
+                    list.listCard.style.display = "none"
+                }           
+            }
+        } else {
+            for (const list of Listing.all) {
+                list.listCard.style.display = ""
+            }
+        }
+        
+    };
+
+    static findResult(e) {
+        const q = e.target.value.toLowerCase()
+        
+        
+        const a = Listing.all.filter((list => {
+           return list.name.toLowerCase().includes(q)}))
+            debugger
+        console.log(a)
+        renderList(a)
+        }
+        
 };

@@ -39,11 +39,10 @@ class ListingApi {
         fetch(this.baseUrl, configObj)  
         .then(r => r.json())
         .then(data => {
-            debugger
             const list = data.data
             const i = new Listing({id: list.id, ...list.attributes} )
-    
             i.renderList()
+            alert("Congratulations you made a rental")
             
         })
     };

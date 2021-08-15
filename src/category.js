@@ -44,9 +44,9 @@ class Category {
                 c.active = false
                 c.option.classList.remove('activated')
             }
-            debugger
-            
-       })
+         
+        })
+        Listing.filterByCategory(activatedCat)
 
     };
   

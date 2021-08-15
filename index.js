@@ -27,20 +27,46 @@ const back = document.querySelector('#back')
 
 // events
 
+cartButton.addEventListener('click', cartButtonFlow)
 
-cartButton.addEventListener('click', function(){addHidden(list), addHidden(cartButton), removeHidden(cartDiv)})
+back.addEventListener('click', backButtonFlow)
 
-back.addEventListener('click', function(){removeHidden(list), removeHidden(cartButton), addHidden(cartDiv)})
+createListButton.addEventListener('click', createListFlow )
 
-createListButton.addEventListener('click', function(){removeHidden(formContainer),addHidden(list), addHidden(createListButton)} )
+cancel.addEventListener('click', cancelFlow)
 
-cancel.addEventListener('click', function(){addHidden(formContainer), removeHidden(list)})
+searchBar.addEventListener('keyup', Listing.findResult)
 
 submitInpt.addEventListener('click', handleFormSubmit)
 
+// button flow
+function cartButtonFlow() {
+    addHidden(list), 
+    addHidden(cartButton), 
+    removeHidden(cartDiv)
+};
 
+function backButtonFlow() {
+    removeHidden(list), 
+    removeHidden(cartButton), 
+    addHidden(cartDiv)
+};
+
+function createListFlow() {
+    removeHidden(formContainer),
+    addHidden(list), 
+    addHidden(createListButton)
+};
+
+function cancelFlow() {
+    addHidden(formContainer), removeHidden(list)
+};
+// 
 
 function handleFormSubmit(e) {
+    addHidden(formContainer)
+    removeHidden(createListButton)
+    removeHidden(list)
     e.preventDefault()
     ListingApi.createListing()
 
