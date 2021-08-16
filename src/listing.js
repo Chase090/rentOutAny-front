@@ -92,13 +92,14 @@ class Listing {
 
     static findResult(e) {
         const q = e.target.value.toLowerCase()
-        
-        
-        const a = Listing.all.filter((list => {
-           return list.name.toLowerCase().includes(q)}))
-            debugger
-        console.log(a)
-        renderList(a)
-        }
+
+        for (const list of Listing.all) {
+            if (list.name.toLowerCase().includes(q)) {
+                list.listCard.style.display = ""
+            } else {
+                list.listCard.style.display = "none"
+            }
+        }    
+    }
         
 };
